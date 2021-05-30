@@ -1,10 +1,16 @@
 import React from "react";
-import { Counter } from "./features/counter/Counter";
+import AddTodo from "./components/AddTodo";
+import Filters from "./components/Filters";
+import Header from "./components/Header";
+import ViewTodo from "./components/ViewTodo";
 
 function App() {
 	return (
 		<div className='App'>
-			<Counter />
+			<Header />
+			<AddTodo />
+			<ViewTodo />
+			<Filters />
 		</div>
 	);
 }
