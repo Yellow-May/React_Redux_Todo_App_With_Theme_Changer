@@ -17,10 +17,12 @@ type TodoType = {
 
 export interface TodoState {
 	todos: TodoType[];
+	currentState: "all" | "active" | "completed";
 }
 
 const initialState: TodoState = {
 	todos: hardCodedTodos,
+	currentState: "all",
 };
 
 export const todoSlice = createSlice({
@@ -45,5 +47,6 @@ export const todoSlice = createSlice({
 export const { addTodo, delTodo, markTodo } = todoSlice.actions;
 
 export const todosData = (state: TodoState) => state.todos;
+export const currentState = (state: TodoState) => state.currentState;
 
 export default todoSlice.reducer;
