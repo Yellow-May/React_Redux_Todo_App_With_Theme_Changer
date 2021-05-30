@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { changeState, currentState, todosData } from "../redux/slices/todoSlice";
+import { changeState, clearCompleted, currentState, todosData } from "../redux/slices/todoSlice";
 
 const filterBtns = ["all", "active", "completed"];
 
@@ -38,7 +38,7 @@ const Filters = () => {
 					</button>
 				))}
 			</div>
-			<button className='btn btn-filter' title='clear completed'>
+			<button className='btn btn-filter' title='clear completed' onClick={() => dispatch(clearCompleted())}>
 				clear completed
 			</button>
 		</div>
