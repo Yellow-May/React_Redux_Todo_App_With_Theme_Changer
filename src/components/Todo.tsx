@@ -12,13 +12,14 @@ const Todo = (props: TodoType) => {
 				<input
 					type='checkbox'
 					name='markTodo'
+					aria-label={`mark ${props.title} as ${props.pending ? "complete" : "incomplete"}`}
 					checked={!props.pending}
 					onChange={() => dispatch(markTodo(props.id))}
 				/>
 				<span></span>
 			</div>
 			<h3 className='title'>{props.title}</h3>
-			<button className='btn btn-del' title='delete Todo' onClick={() => dispatch(delTodo(props.id))}>
+			<button className='btn btn-del' title={`delete ${props.title}`} onClick={() => dispatch(delTodo(props.id))}>
 				<img src={closeIcon} alt='close' />
 			</button>
 		</div>

@@ -11,7 +11,7 @@ const Header = () => {
 	return (
 		<header>
 			<h1>Todo App</h1>
-			<button title='switch theme' onClick={() => dispatch(toggleTheme())}>
+			<button title={`switch theme to ${theme === "dark" ? "light" : "dark"}`} onClick={() => dispatch(toggleTheme())}>
 				<img src={theme === "dark" ? sunIcon : moonIcon} alt='moon' />
 			</button>
 		</header>
