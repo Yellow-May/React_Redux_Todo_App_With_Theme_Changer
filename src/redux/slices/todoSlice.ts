@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 const hardCodedTodos = [
 	{ id: 1, title: "Completed online javascript course", pending: true },
@@ -46,7 +47,7 @@ export const todoSlice = createSlice({
 
 export const { addTodo, delTodo, markTodo } = todoSlice.actions;
 
-export const todosData = (state: TodoState) => state.todos;
-export const currentState = (state: TodoState) => state.currentState;
+export const todosData = (state: RootState) => state.todo.todos;
+export const currentState = (state: RootState) => state.todo.currentState;
 
 export default todoSlice.reducer;
