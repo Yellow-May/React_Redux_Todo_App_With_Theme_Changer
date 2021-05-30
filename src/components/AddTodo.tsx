@@ -16,7 +16,7 @@ const AddTodo = () => {
 					addTodo({
 						id: uuidv4(),
 						title,
-						pending: false,
+						pending: true,
 					})
 				);
 				setTitle("");

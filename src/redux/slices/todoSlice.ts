@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 const hardCodedTodos = [
-	{ id: "1", title: "Completed online javascript course", pending: true },
-	{ id: "2", title: "Jog around the park 3x", pending: false },
-	{ id: "3", title: "10 minutes meditation", pending: false },
-	{ id: "4", title: "Read for 1 hour", pending: false },
-	{ id: "5", title: "Pick up groceries", pending: false },
-	{ id: "6", title: "Complete Todo App on Frontend Mentor", pending: false },
+	{ id: "1", title: "Completed online javascript course", pending: false },
+	{ id: "2", title: "Jog around the park 3x", pending: true },
+	{ id: "3", title: "10 minutes meditation", pending: true },
+	{ id: "4", title: "Read for 1 hour", pending: true },
+	{ id: "5", title: "Pick up groceries", pending: true },
+	{ id: "6", title: "Complete Todo App on Frontend Mentor", pending: true },
 ];
 
 type TodoType = {
