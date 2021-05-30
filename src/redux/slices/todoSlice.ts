@@ -10,7 +10,7 @@ const hardCodedTodos = [
 	{ id: "6", title: "Complete Todo App on Frontend Mentor", pending: true },
 ];
 
-type TodoType = {
+export type TodoType = {
 	id: string;
 	title: string;
 	pending: boolean;
