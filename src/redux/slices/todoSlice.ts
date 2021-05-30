@@ -42,10 +42,13 @@ export const todoSlice = createSlice({
 				return item;
 			});
 		},
+		changeState: (state, action: PayloadAction<"all" | "active" | "completed">) => {
+			state.currentState = action.payload;
+		},
 	},
 });
 
-export const { addTodo, delTodo, markTodo } = todoSlice.actions;
+export const { addTodo, delTodo, markTodo, changeState } = todoSlice.actions;
 
 export const todosData = (state: RootState) => state.todo.todos;
 export const currentState = (state: RootState) => state.todo.currentState;
