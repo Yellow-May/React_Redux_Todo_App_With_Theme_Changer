@@ -45,10 +45,13 @@ export const todoSlice = createSlice({
 		changeState: (state, action: PayloadAction<"all" | "active" | "completed">) => {
 			state.currentState = action.payload;
 		},
+		clearCompleted: state => {
+			state.todos = state.todos.filter(todo => todo.pending === true);
+		},
 	},
 });
 
-export const { addTodo, delTodo, markTodo, changeState } = todoSlice.actions;
+export const { addTodo, delTodo, markTodo, changeState, clearCompleted } = todoSlice.actions;
 
 export const todosData = (state: RootState) => state.todo.todos;
 export const currentState = (state: RootState) => state.todo.currentState;
