@@ -8,16 +8,9 @@ const ViewTodos = () => {
 	const appState = useAppSelector(currentState);
 
 	const filtered = () => {
-		switch (appState) {
-			case "active":
-				return todos.filter(todo => (todo.pending = false));
-			case "all":
-				return todos;
-			case "completed":
-				return todos.filter(todo => (todo.pending = true));
-			default:
-				return todos;
-		}
+		if (appState === "active") return todos.filter(todo => todo.pending === true);
+		if (appState === "completed") return todos.filter(todo => todo.pending === false);
+		return todos;
 	};
 
 	return (
