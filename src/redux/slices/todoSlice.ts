@@ -2,16 +2,16 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 const hardCodedTodos = [
-	{ id: 1, title: "Completed online javascript course", pending: true },
-	{ id: 2, title: "Jog around the park 3x", pending: false },
-	{ id: 3, title: "10 minutes meditation", pending: false },
-	{ id: 4, title: "Read for 1 hour", pending: false },
-	{ id: 5, title: "Pick up groceries", pending: false },
-	{ id: 6, title: "Complete Todo App on Frontend Mentor", pending: false },
+	{ id: "1", title: "Completed online javascript course", pending: true },
+	{ id: "2", title: "Jog around the park 3x", pending: false },
+	{ id: "3", title: "10 minutes meditation", pending: false },
+	{ id: "4", title: "Read for 1 hour", pending: false },
+	{ id: "5", title: "Pick up groceries", pending: false },
+	{ id: "6", title: "Complete Todo App on Frontend Mentor", pending: false },
 ];
 
 type TodoType = {
-	id: number;
+	id: string;
 	title: string;
 	pending: boolean;
 };
@@ -33,10 +33,10 @@ export const todoSlice = createSlice({
 		addTodo: (state, action: PayloadAction<TodoType>) => {
 			state.todos.push(action.payload);
 		},
-		delTodo: (state, action: PayloadAction<number>) => {
+		delTodo: (state, action: PayloadAction<string>) => {
 			state.todos = state.todos.filter(item => item.id !== action.payload);
 		},
-		markTodo: (state, action: PayloadAction<number>) => {
+		markTodo: (state, action: PayloadAction<string>) => {
 			state.todos = state.todos.map(item => {
 				if (item.id === action.payload) item.pending = !item.pending;
 				return item;
