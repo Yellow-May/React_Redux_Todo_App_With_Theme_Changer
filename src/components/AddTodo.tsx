@@ -15,14 +15,16 @@ const AddTodo = () => {
 			as='form'
 			onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
 				e.preventDefault();
-				dispatch(
-					addTodo({
-						id: uuidv4(),
-						title,
-						pending: true,
-					})
-				);
-				setTitle("");
+				if (title !== "") {
+					dispatch(
+						addTodo({
+							id: uuidv4(),
+							title,
+							pending: true,
+						})
+					);
+					setTitle("");
+				}
 			}}>
 			<div className='check'>
 				<input type='checkbox' name='markTodo' />
