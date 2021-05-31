@@ -2,6 +2,7 @@ import React from "react";
 import { useAppDispatch } from "../redux/hooks";
 import { addTodo } from "../redux/slices/todoSlice";
 import { v4 as uuidv4 } from "uuid";
+import { Button, Box } from "../styles";
 
 const AddTodo = () => {
 	const [title, setTitle] = React.useState<string>("");
@@ -9,7 +10,9 @@ const AddTodo = () => {
 	const dispatch = useAppDispatch();
 
 	return (
-		<form
+		<Box
+			rounded
+			as='form'
 			onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
 				e.preventDefault();
 				dispatch(
@@ -33,10 +36,10 @@ const AddTodo = () => {
 				onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
 				autoComplete='off'
 			/>
-			<button className='btn btn-form' type='submit' title='add new todo'>
+			<Button className='btn btn-form' type='submit' title='add new todo'>
 				add
-			</button>
-		</form>
+			</Button>
+		</Box>
 	);
 };
 
