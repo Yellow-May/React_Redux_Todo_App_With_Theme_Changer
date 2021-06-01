@@ -1,14 +1,15 @@
 import React from "react";
 import { useAppDispatch } from "../redux/hooks";
 import { delTodo, markTodo, TodoType } from "../redux/slices/todoSlice";
+import { Box, BoxTitle, Button, CheckBox } from "../styles";
 import closeIcon from "../assets/icons/icon-cross.svg";
 
 const Todo = (props: TodoType) => {
 	const dispatch = useAppDispatch();
 
 	return (
-		<div className='todo-item'>
-			<div className='check'>
+		<Box>
+			<CheckBox>
 				<input
 					type='checkbox'
 					name='markTodo'
@@ -17,12 +18,12 @@ const Todo = (props: TodoType) => {
 					onChange={() => dispatch(markTodo(props.id))}
 				/>
 				<span></span>
-			</div>
-			<h3 className='title'>{props.title}</h3>
-			<button className='btn btn-del' title={`delete ${props.title}`} onClick={() => dispatch(delTodo(props.id))}>
+			</CheckBox>
+			<BoxTitle checked={!props.pending}>{props.title}</BoxTitle>
+			<Button opacity={0} title={`delete ${props.title}`} onClick={() => dispatch(delTodo(props.id))}>
 				<img src={closeIcon} alt='close' />
-			</button>
-		</div>
+			</Button>
+		</Box>
 	);
 };
 

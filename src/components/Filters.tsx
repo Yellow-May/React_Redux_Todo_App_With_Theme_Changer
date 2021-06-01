@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { changeState, clearCompleted, currentState, todosData } from "../redux/slices/todoSlice";
+import { Box, Button, FilterGroup } from "../styles";
 
 const filterBtns = ["all", "active", "completed"];
 
@@ -24,24 +25,24 @@ const Filters = () => {
 	};
 
 	return (
-		<div className='filters-section'>
+		<Box flexBetween roundedBot>
 			<small>{itemsLeft()} items left</small>
-			<div className='filters'>
+			<FilterGroup>
 				{filterBtns.map(btn => (
-					<button
+					<Button
 						className={`btn btn-filter ${btn === appState ? "on" : ""}`}
 						key={btn}
 						name={btn}
 						title={`view ${btn}`}
 						onClick={handleStateChange}>
 						{btn}
-					</button>
+					</Button>
 				))}
-			</div>
-			<button className='btn btn-filter' title='clear completed' onClick={() => dispatch(clearCompleted())}>
+			</FilterGroup>
+			<Button className='btn btn-filter' title='clear completed' onClick={() => dispatch(clearCompleted())}>
 				clear completed
-			</button>
-		</div>
+			</Button>
+		</Box>
 	);
 };
 

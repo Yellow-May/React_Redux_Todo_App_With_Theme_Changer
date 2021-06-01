@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import { currentTheme, toggleTheme } from "../redux/slices/themeSlice";
+import { HeaderDock, Title, Button } from "../styles";
 import moonIcon from "../assets/icons/icon-moon.svg";
 import sunIcon from "../assets/icons/icon-sun.svg";
 
@@ -9,12 +10,12 @@ const Header = () => {
 	const dispatch = useAppDispatch();
 
 	return (
-		<header>
-			<h1>Todo App</h1>
-			<button title={`switch theme to ${theme === "dark" ? "light" : "dark"}`} onClick={() => dispatch(toggleTheme())}>
+		<HeaderDock>
+			<Title>Todo App</Title>
+			<Button title={`switch theme to ${theme === "dark" ? "light" : "dark"}`} onClick={() => dispatch(toggleTheme())}>
 				<img src={theme === "dark" ? sunIcon : moonIcon} alt='moon' />
-			</button>
-		</header>
+			</Button>
+		</HeaderDock>
 	);
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useAppDispatch } from "../redux/hooks";
 import { addTodo } from "../redux/slices/todoSlice";
 import { v4 as uuidv4 } from "uuid";
-import { Button, Box } from "../styles";
+import { Button, Box, BoxInput, CheckBox } from "../styles";
 
 const AddTodo = () => {
 	const [title, setTitle] = React.useState<string>("");
@@ -26,17 +26,18 @@ const AddTodo = () => {
 					setTitle("");
 				}
 			}}>
-			<div className='check'>
-				<input type='checkbox' name='markTodo' />
+			<CheckBox>
+				<input type='checkbox' name='markTodo' aria-label='inactive' disabled />
 				<span></span>
-			</div>
-			<input
+			</CheckBox>
+			<BoxInput
 				className='title'
 				type='text'
 				name='newTodo'
 				value={title}
 				onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
 				autoComplete='off'
+				placeholder='Enter new task...'
 			/>
 			<Button className='btn btn-form' type='submit' title='add new todo'>
 				add
