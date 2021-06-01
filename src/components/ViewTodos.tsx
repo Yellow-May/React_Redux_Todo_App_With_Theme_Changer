@@ -14,11 +14,11 @@ const ViewTodos = () => {
 	};
 
 	return (
-		<div className='view-todos'>
+		<>
 			{filtered().map(todo => (
 				<Todo key={todo.id} {...todo} />
 			))}
-		</div>
+		</>
 	);
 };
 

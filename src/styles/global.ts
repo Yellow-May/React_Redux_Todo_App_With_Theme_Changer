@@ -10,6 +10,18 @@ export default createGlobalStyle(({theme}: ThemeProps< ReturnType<typeof themeDa
 	},
 
 	body: {
-		background: `url(${theme.bgDesk}) 0 0/cover no-repeat`,
+		background: `url(${theme.bgDesk}) 0 0  no-repeat, ${theme.bgPrimary}`,
+		paddingBottom: 20,
+		fontSize: 16,
+
+		small : {
+			color: theme.txtSecondary
+		},
+
+		"@media(max-width: 640px)" : {
+			fontSize: 11,
+
+			backgroundImage: `url(${theme.bgMob})`
+		}
 	}
 }));

@@ -8,6 +8,7 @@ import { currentTheme } from "./redux/slices/themeSlice";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/global";
 import themeData from "./styles/themes";
+import { AppWrapper, SectionWrapper } from "./styles";
 
 function App() {
 	const theme = useAppSelector(currentTheme);
@@ -15,14 +16,14 @@ function App() {
 	return (
 		<ThemeProvider theme={themeData(theme)}>
 			<GlobalStyles />
-			<div>
+			<AppWrapper>
 				<Header />
 				<AddTodo />
-				<main>
+				<SectionWrapper>
 					<ViewTodos />
 					<Filters />
-				</main>
-			</div>
+				</SectionWrapper>
+			</AppWrapper>
 		</ThemeProvider>
 	);
 }

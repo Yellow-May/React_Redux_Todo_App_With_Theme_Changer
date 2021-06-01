@@ -30,7 +30,8 @@ const Filters = () => {
 			<FilterGroup>
 				{filterBtns.map(btn => (
 					<Button
-						className={`btn btn-filter ${btn === appState ? "on" : ""}`}
+						filterBtn
+						active={btn === appState}
 						key={btn}
 						name={btn}
 						title={`view ${btn}`}
@@ -39,7 +40,7 @@ const Filters = () => {
 					</Button>
 				))}
 			</FilterGroup>
-			<Button className='btn btn-filter' title='clear completed' onClick={() => dispatch(clearCompleted())}>
+			<Button filterBtn className='btn btn-filter' title='clear completed' onClick={() => dispatch(clearCompleted())}>
 				clear completed
 			</Button>
 		</Box>

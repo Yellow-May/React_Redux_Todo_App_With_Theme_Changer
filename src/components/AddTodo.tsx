@@ -26,7 +26,7 @@ const AddTodo = () => {
 					setTitle("");
 				}
 			}}>
-			<CheckBox>
+			<CheckBox inactive>
 				<input type='checkbox' name='markTodo' aria-label='inactive' disabled />
 				<span></span>
 			</CheckBox>
