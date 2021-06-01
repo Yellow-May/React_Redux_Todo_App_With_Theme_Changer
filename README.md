@@ -47,7 +47,7 @@ Users should be able to:
 
 ### Important Take
 
-I learnt how more about the application of PropsTypes to Style Components
+I learnt more about the application of PropsTypes to Style Components
 
 ```ts
 const Component = styled.div<{short: boolean}>((props) => ({
