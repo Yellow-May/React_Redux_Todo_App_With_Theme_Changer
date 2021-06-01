@@ -33,14 +33,14 @@ Users should be able to:
 
 ### Links
 
-<!-- -   Live Site URL: [Live Site](https://frontend-mentor-calculator-app.vercel.app/) -->
+-   Live Site URL: [Live Site](https://react-redux-todo-app-with-theme-changer.vercel.app/)
 
 ## My process
 
 ### Built with
 
 -   [ReactJs](https://www.reactjs.org)
--   [Redux Toolkit](https://www.reduxjs.org)
+-   [Redux Toolkit](https://www.redux-toolkit.js.org)
 -   [Styled-Components](https://www.styled-components.com)
 -   Mobile-first workflow
 -   Typescript
